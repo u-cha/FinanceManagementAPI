@@ -9,3 +9,6 @@ class Currency(models.Model):
     )
     name = models.CharField("Currency name", max_length=50)
     symbol = models.CharField("Currency symbol", null=True, blank=True, unique=True)
+
+    def __str__(self):
+        return f"Currency({self.code}, {self.symbol[:10]})"
