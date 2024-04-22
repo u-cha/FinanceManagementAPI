@@ -1,5 +1,6 @@
 import uuid
 
+from django.core.validators import MinValueValidator
 from django.db import models
 
 
@@ -7,7 +8,9 @@ from django.db import models
 class Account(models.Model):
     account_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     owner_id = models.ForeignKey("customers.Customer", on_delete=models.PROTECT)
-    balance = models.DecimalField(max_digits=10, decimal_places=2)
+    balance = models.DecimalField(
+        max_digits=10, decimal_places=2, validators=[MinValueValidator(0)]
+    )
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     last_transaction = models.DateTimeField()
