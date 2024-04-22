@@ -79,8 +79,8 @@ DATABASES = {
         'NAME': Config.DB_NAME,
         'USER': Config.DB_USER,
         'PASSWORD': Config.DB_PASSWORD,
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': Config.DB_HOST,
+        'PORT': Config.DB_PORT,
     }
 }
 
