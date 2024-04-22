@@ -12,3 +12,5 @@ class Config(object):
     DB_USER = os.getenv("DB_USER")
     DB_PASSWORD = os.getenv("DB_PASSWORD")
     DJANGO_SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+    DJANGO_ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS").split(",")
+    DJANGO_DEBUG_TOGGLE = os.getenv("DJANGO_DEBUG_TOGGLE")
